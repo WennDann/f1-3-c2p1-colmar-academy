@@ -1,0 +1,450 @@
+/* local fonts */
+@font-face {
+  font-family: 'Baloo Bhaijaan';
+  src: url('../fonts/BalooBhaijaan-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-Regular.ttf') format('truetype'),
+       url('../fonts/Raleway-Italic.ttf') format('truetype'),
+       url('../fonts/Raleway-SemiBold.ttf') format('truetype'),
+       url('../fonts/Raleway-Bold.ttf') format('truetype'),
+       url('../fonts/Raleway-Black.ttf') format('truetype');
+}
+
+/* general styles */
+html {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  color: #0012B2;
+}
+h1, h2, h3 {
+  font-family: 'Baloo Bhaijaan', monospace;
+  font-weight: bold;
+}
+h1 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+h2 {
+  font-size: 1.7rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+h3 {
+  font-size: 1.1rem;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+span {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+a {
+  text-decoration: none;
+  color: #4C5EFF;
+}
+a:hover {
+  color: #FFD12F;
+}
+.quote {
+  font-size: 1rem;
+}
+.author {
+  font-size: 0.75rem;
+  margin-top: 1rem;
+}
+.info {
+  margin-bottom: 0.5rem;
+}
+.flexrow {
+  max-width: 100%;
+  display: flex;
+}
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+}
+.primary_container {
+  flex-basis: 60%;
+  padding: 2rem 1.5rem;
+}
+.secondary_container {
+  flex-basis: 40%;
+}
+.image_container img {
+  width: 100%;
+}
+
+/* header section */
+header {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+header .flexrow {
+  display: flex;
+  padding: 0 1.5rem;
+  height: 4rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo, nav, nav ul {
+  display: flex;
+  align-items: center;
+}
+.logo svg {
+  height: 2rem;
+  width: auto;
+  margin-right: 0.3rem;
+}
+.logo span {
+  font-size: 1rem;
+}
+nav ul li {
+  padding-left: 1rem;
+}
+strong {
+  font-weight: bold;
+}
+header .mobile {
+  display: none;
+}
+.icon {
+  fill: #4C5EFF;
+}
+.icon:hover {
+  fill: #FFD12F;
+}
+
+/* media query for mobile */
+@media only screen and (max-width: 640px) {
+  header .desktop, .logo {
+    display: none;
+  }
+  header .mobile {
+    display: flex;
+  }
+  nav {
+    width: 100%;
+  }
+  nav ul {
+    width: 100%;
+    justify-content: space-between;
+  }
+  nav ul li {
+    padding: 0;
+  }
+  nav ul li img, nav ul li svg {
+    height: 2rem;
+    width: auto;
+  }
+}
+
+/* banner section */
+#banner {
+  background-color: #A1ABFF;
+  padding-top: 4rem;
+}
+#banner .secondary_container {
+  align-items: flex-start;
+  justify-content: center;
+}
+.lead {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.button {
+  font-size: 1rem;
+  color: #A1ABFF;
+  text-align: center;
+  background-color: #0012B2;
+  padding: 0.5rem;
+}
+.button:hover {
+  color: #B28B00;
+  background-color: #FFD12F;
+}
+
+/* media query for tablet */
+@media only screen and (max-width: 800px) {
+  #banner .primary_container {
+    padding: 1.5rem 1rem 2rem 1rem;
+    flex-basis: 50%;
+  }
+  #banner .secondary_container {
+    flex-basis: 50%;
+  }
+}
+
+/* media query for mobile */
+@media only screen and (max-width: 640px) {
+  #banner .flexrow {
+    flex-direction: column;
+  }
+  #banner .primary_container {
+    padding: 0 0 2rem 0;
+    flex-basis: auto;
+  }
+  #banner .secondary_container {
+    padding: 0 1rem 2rem 1rem;
+    flex-basis: auto;
+  }
+  #banner .text_container {
+    width: 100%;
+  }
+}
+
+/* information section */
+#information h2 {
+  text-align: left;
+}
+#information .quote {
+  margin-top: 1.5rem;
+}
+#information .primary_container {
+  border-right: 1px #A1ABFF solid;
+}
+#information .secondary_container {
+  padding-top: 1rem;
+  justify-content: flex-start;
+}
+#information .secondary_container .flexrow {
+  padding: 1rem;
+  max-width: 100%;
+  border: 1px #A1ABFF solid;
+}
+#information .secondary_container .flexrow:nth-child(3) {
+  background-color: #A1ABFF;
+}
+#information .secondary_container .desktop {
+  width: 35%;
+  height: auto;
+}
+#information .mobile {
+  display: none;
+}
+#information .secondary_container .text_container {
+  width: 65%;
+  padding: 0 1rem;
+  justify-content: center;
+}
+#information a {
+  font-weight: bold;
+}
+/* behaviour while hovering over "read more" */
+.readmore .word {
+  color: #4C5EFF;
+  font-weight: bold;
+}
+.readmore .word:hover {
+  color: #FFD12F;
+}
+.readmore .definition-container {
+  position: fixed;
+  z-index: 10;
+  top: -100%;
+  left: 10%;
+  width: 60%;
+  padding: 0.5rem 2rem 2rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 4rem 2rem #A1ABFF;
+  opacity: 0;
+	transition: top 1s ease, opacity 0.1s linear;
+}
+.readmore:hover .definition-container {
+  top: 25%;
+  opacity: 1;
+}
+
+/* media query for tablet */
+@media only screen and (max-width: 800px) {
+  #information .primary_container {
+    flex-basis: 50%;
+    padding: 1.5rem 1rem 2rem 1rem;
+  }
+  #information .secondary_container {
+    flex-basis: 50%;
+  }
+}
+
+/* media query for mobile */
+@media only screen and (max-width: 640px) {
+  #information .primary_container, #information .desktop {
+    display: none;
+  }
+  #information .secondary_container {
+    flex-basis: 100%;
+    padding-top: 0;
+  }
+  #information .secondary_container .flexrow {
+    flex-direction: column;
+    padding-bottom: 3rem;
+    border: none;
+  }
+  #information .secondary_container .flexrow:nth-child(3) {
+    background-color: #FFFFFF;
+  }
+  #information .secondary_container .flexrow:nth-child(3) {
+    padding-bottom: 2rem;
+  }
+  #information .secondary_container .text_container {
+    width: auto;
+  }
+  #information .mobile {
+    display: flex;
+  }
+  #information h3 {
+    margin-top: 1rem;
+  }
+}
+
+/* courses section */
+#courses {
+  background-color: #A1ABFF;
+  height: auto;
+}
+#courses .desktop {
+  flex-wrap: wrap;
+  margin: 2rem 3.5rem 0rem 3.5rem;
+}
+.course {
+  flex: 1 0 25%;
+  background-color: #FFFFFF;
+  margin: 0 1rem 2rem 1rem;
+}
+.course .text_container {
+  padding: 1rem 1rem 1.5rem 1rem;
+}
+#courses .mobile {
+  display: none;
+}
+
+/* behaviour while hovering over "more" */
+.more h3:hover {
+  color: #FFD12F;
+}
+.more .info {
+  margin-top: 1rem;
+}
+.more .definition-container {
+  height: 0;
+  opacity: 0;
+  background-color: #FFFFFF;
+	transition: opacity 1s linear;
+}
+.more:hover .definition-container {
+  height: auto;
+  opacity: 1;
+  padding: 1rem;
+}
+
+/* media query for tablet */
+@media only screen and (max-width: 800px) {
+  #courses .desktop {
+    margin: 2rem 0rem 0rem 0rem;
+  }
+  .course {
+    flex: 1 0 40%;
+  }
+}
+
+/* media query for mobile */
+@media only screen and (max-width: 640px) {
+  #courses {
+    margin: 0 1px;
+    border: 1px #A1ABFF solid;
+    background-color: #FFFFFF;
+  }
+  #courses .desktop {
+    display: none;
+  }
+  #courses .mobile {
+    display: flex;
+    padding: 1rem 14px 2rem 14px;
+  }
+  #courses ul {
+    flex-basis: 100%;
+  }
+  #courses ul li {
+    padding: 1.5rem 1rem;
+    background-color: #A1ABFF;
+    margin-bottom: 0.5rem;
+  }
+  #courses ul li:nth-child(6) {
+    margin-bottom: 0;
+  }
+}
+
+/* thesis section */
+.video_container {
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.video_container video {
+  width: 100%;
+  height: auto;
+}
+#thesis .secondary_container {
+  justify-content: flex-start;
+  padding-top: 2rem;
+}
+#thesis .secondary_container .flexrow {
+  padding: 1rem;
+}
+#thesis .secondary_container .flexrow:first-child {
+  background-color: #A1ABFF;
+}
+#thesis .secondary_container .image_container {
+  width: 35%;
+  height: auto;
+}
+#thesis .secondary_container .text_container {
+  width: 65%;
+  padding-left: 1rem;
+  justify-content: center;
+}
+#thesis h3 {
+  margin-top: 0;
+}
+
+/* media query for tablet */
+@media only screen and (max-width: 800px) {
+  #thesis .primary_container {
+    flex-basis: 50%;
+    padding: 1.5rem 1rem 2rem 1rem;
+  }
+  #thesis .secondary_container {
+    flex-basis: 50%;
+  }
+}
+
+/* media query for mobile */
+@media only screen and (max-width: 640px) {
+  #thesis .secondary_container, #thesis .primary_container .text_container {
+    display: none;
+  }
+  #thesis .primary_container {
+    flex-basis: 100%;
+    padding: 1rem 0 1.5rem 0;
+  }
+}
+
+/* footer section */
+footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px #A1ABFF solid;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+.legal ul li {
+  padding-left: 1rem;
+}
+/* media query for mobile */
+@media only screen and (max-width: 640px) {
+  .legal {
+    display: none;
+  }
+}
